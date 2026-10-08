@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Escribime por WhatsApp · FATPlaylist</title>
+<style>
+  :root { --bg: #120b1f; --glow: #3b1d5c; --card: #1c1430; --text: #f4f0fa; --muted: #b3aac6; --accent: #9a5be0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+    background: radial-gradient(circle at 50% 15%, var(--glow) 0%, var(--bg) 62%);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: var(--text);
+  }
+  .card { max-width: 400px; width: 100%; background: var(--card); border: 1px solid rgba(255,255,255,.09);
+    border-radius: 22px; padding: 36px 28px; text-align: center; box-shadow: 0 28px 70px rgba(0,0,0,.45); }
+  .marca { font-weight: 800; font-size: 24px; letter-spacing: -.3px; margin-bottom: 18px; }
+  .marca span { color: var(--accent); }
+  h1 { font-size: 20px; margin: 0 0 10px; }
+  p { color: var(--muted); font-size: 15px; line-height: 1.5; margin: 0 0 24px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: #0b1a10;
+    font-weight: 700; font-size: 16px; padding: 15px 22px; border-radius: 14px; text-decoration: none; }
+  .btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .nota { margin-top: 20px; font-size: 12.5px; color: #8d84a3; }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="marca">FAT<span>Playlist</span></div>
+  <h1>Te estoy abriendo WhatsApp…</h1>
+  <p>Si en unos segundos no se abre solo, tocá el botón.</p>
+  <a class="btn" id="wa" href="#">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0b1a10" aria-hidden="true"><path d="M12 3C7.03 3 3 6.9 3 11.7C3 13.4 3.48 15 4.34 16.35L3.3 20.4L7.55 19.4C8.87 20.1 10.39 20.5 12 20.5C16.97 20.5 21 16.6 21 11.7C21 6.9 16.97 3 12 3Z"/></svg>
+    Abrir WhatsApp
+  </a>
+  <noscript><p class="nota">Para abrir WhatsApp desde acá hace falta tener JavaScript activado en el navegador.</p></noscript>
+  <div class="nota">Licencia anual $8.000 ARS</div>
+</main>
+<script>
+  // El link va codificado para que el numero no quede a la vista en el codigo
+  // de la pagina ni lo junten los robots que recorren la web.
+  var destino = atob("aHR0cHM6Ly93YS5tZS81NDkyOTk1NDAyMjMzP3RleHQ9SG9sYSUyQyUyMHZpJTIwRkFUUGxheWxpc3QlMjB5JTIwcXVpZXJvJTIwaW5mbw==");
+  document.getElementById("wa").href = destino;
+  setTimeout(function () { window.location.replace(destino); }, 700);
+</script>
+</body>
+</html>
